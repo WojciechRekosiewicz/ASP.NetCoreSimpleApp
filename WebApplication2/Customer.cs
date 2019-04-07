@@ -7,7 +7,7 @@ namespace WebApplication2
         public int Id { get; set; }
 
 
-        [Required, StringLength(10)]
+        [Required, StringLength(49)]
         public string Name { get; set; }
 
 
