@@ -13,15 +13,15 @@
             </tr>           
         </thead>
         <tbody>
-            @foreach (var contact in Model.Customers)
+            @foreach (var customer in Model.Customers)
             {
-
+                <tr>
+                    <td>@customer.Id</td>
+                    <td>@customer.Name</td>
+                    <td>link to edit, delete button</td>
+                </tr>
             }
-            <tr>
-                <td></td>
-                <td></td>
-                <td>link to edit, delete button</td>
-            </tr>
+
         </tbody>
     </table>
 
