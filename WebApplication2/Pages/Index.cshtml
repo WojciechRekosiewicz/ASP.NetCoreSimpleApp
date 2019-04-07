@@ -18,13 +18,16 @@
                 <tr>
                     <td>@customer.Id</td>
                     <td>@customer.Name</td>
-                    <td>link to edit, delete button</td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@customer.Id">edit</a>
+                        <button type="submit" asp-page-handler="delete" asp-route-id="@customer.Id">delete</button>
+                    </td>
                 </tr>
             }
 
         </tbody>
     </table>
-
+    <a asp-page="./Create">Create</a>
 
 
 
