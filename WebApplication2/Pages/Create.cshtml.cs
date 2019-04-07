@@ -16,11 +16,19 @@ namespace WebApplication2.Pages
             _db = db;
         }
 
+        [BindProperty]
         public Customer Customer { get; set; }
 
-        public void OnGet()
+        public async Task<IActionResult> OnPostAsync()
         {
+            if(!ModelState.IsValid)
+            {
+                return Page();
+            }
 
+            _db.Customers.Add(Customer);
+            await _db.SaveChangesAsync();
+            return RedirectToPage("/Index");
         }
     }
 }
